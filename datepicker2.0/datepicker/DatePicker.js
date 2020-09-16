@@ -84,12 +84,11 @@ export class DatePicker {
     #render() {
         //добавить класс
         this.$el.classList.add('datepicker')
-        //Ты кладешь внуть этого тега/node нужный тебе хэтэмэль
         this.$el.innerHTML = getTemplate()
     }
 
     #setup() {
-        //Это нужно, чтобы this в handleClick работало коректно
+        //нужно, чтобы this в handleClick работало коректно
         this.handleClick = this.handleClick.bind(this)
         //вешаем слушателя кликов по нашему элементу
         this.$el.addEventListener('click', this.handleClick)
@@ -103,8 +102,6 @@ export class DatePicker {
         this.$input.textContent = `${d}.${m}.${this.year}`
 
         this.$content = this.$el.querySelector('[data-type="content"]')
-
-        // this.$mounth.addEventListener('click' this.handle)
 
         this.#renderDates()
     }
@@ -153,7 +150,6 @@ export class DatePicker {
 
     //Обработка клика по корневому элеементу
     handleClick(event) {
-        // {} - это вытяшивание нужных значений. Можно так const type = event.target.dataset.type Но уже обычно так не делают из-за привычки, когда несколько переменных надо вытащить
         const { type } = event.target.dataset
         //console.log(type, event) //ДЕБАГ кликов
         if (type === 'input') {
