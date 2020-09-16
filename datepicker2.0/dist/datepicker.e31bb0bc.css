@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.app {
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+}
+
+.wrap {
+    width: 500px;
+    height: 46px;
+}
+
+.datepicker {
+    width: 100%;
+    position: relative;
+    height: 46px;
+    z-index: 100;
+}
+
+.datepicker.open > .dropdown {
+    display: block;
+}
+
+.datepicker.open > .backdrop {
+    display: block;
+}
+
+.backdrop {
+    position: fixed;
+    display: none;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+}
+
+.input {
+    height: 46px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+
+    top: 56px;
+    left: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    /*    рассмотреть*/
+
+    border-radius: 5px;
+}
+
+.dropdown > .header {
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+}
+
+.dropdown > .header > button {
+    /*    flex-grow: 1;*/
+    background-color: white;
+    border: none;
+    width: 40px;
+}
+.dropdown > .header > button.before:hover {
+    background-color: #ccc;
+    /*    border-radius: 5px;*/
+    border-radius: 5px 5px 5px 0;
+}
+.dropdown > .header > button.next:hover {
+    background-color: #ccc;
+    /*    border-radius: 5px;*/
+    border-radius: 5px 5px 0 5px;
+}
+.dropdown > .header > button:active, .dropdown > .header > button:focus /*убирает границы при нажатии*/ {
+    outline: none;
+}
+
+.dropdown > .header > .mounth {
+    flex-grow: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* text-align: center; */
+}
+
+.dropdown > .content {
+    border-top: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+}
+
+.dropdown > .content div {
+    width: 1em;
+    height: 1em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.dropdown > .content div:hover {
+    background-color: #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.dropdown > .content .disabled {
+}
+
+.dropdown > .content .disabled:hover {
+    background-color: white;
+    cursor: default;
+}
+
+
+/*# sourceMappingURL=/datepicker.e31bb0bc.css.map */
